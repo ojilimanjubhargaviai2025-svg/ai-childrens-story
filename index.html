@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Children's Story</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff0f5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px #ccc;
+        }
+
+        h1 {
+            color: #8e44ad;
+        }
+
+        input, select, button {
+            padding: 12px;
+            margin: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #8e44ad;
+            color: white;
+            cursor: pointer;
+        }
+
+        #story {
+            margin-top: 20px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🌈 AI Children's Story</h1>
+        <p>Create a magical story for children!</p>
+
+        <input type="text" id="name"
+               placeholder="Enter child's name">
+
+        <br>
+
+        <select id="theme">
+            <option value="forest">Magical Forest</option>
+            <option value="space">Space Adventure</option>
+            <option value="animals">Friendly Animals</option>
+            <option value="princess">Princess Adventure</option>
+        </select>
+
+        <br>
+
+        <button onclick="createStory()">Generate Story</button>
+
+        <div id="story"></div>
+    </div>
+
+    <script>
+        function createStory() {
+            let name = document.getElementById("name").value.trim();
+            let theme = document.getElementById("theme").value;
+            let story = "";
+
+            if (name === "") {
+                name = "Little Star";
+            }
+
+            if (theme === "forest") {
+                story = name + " entered a magical forest. " +
+                "There, a tiny fairy gave " + name +
+                " a shining golden key. The key opened a secret garden " +
+                "where flowers could sing and butterflies could talk. " +
+                name + " helped the forest animals and became their best friend. " +
+                "From that day, kindness filled the magical forest.";
+            }
+
+            else if (theme === "space") {
+                story = name + " travelled into space in a colourful rocket. " +
+                "On a distant planet, " + name +
+                " met a friendly alien who had lost its way home. " +
+                "Together, they followed the stars and found the alien's family. " +
+                name + " returned to Earth with wonderful memories.";
+            }
+
+            else if (theme === "animals") {
+                story = name + " met a rabbit, a little lion and a clever monkey. " +
+                "One day, they found a baby bird that could not fly. " +
+                "All the friends worked together to help the bird. " +
+                "Soon, the bird flew happily into the sky. " +
+                name + " learned that teamwork makes everything easier.";
+            }
+
+            else {
+                story = name + " discovered a beautiful castle beyond the clouds. " +
+                "Inside, a kind princess was searching for a missing star. " +
+                name + " followed a rainbow and found the star beside a lake. " +
+                "The star returned to the sky, lighting up the whole kingdom. " +
+                name + " learned that courage and kindness create magic.";
+            }
+
+            document.getElementById("story").innerHTML =
+                "<h2>✨ Your Magical Story</h2><p>" + story +
+                "</p><h3>🌟 The End</h3>";
+        }
+    </script>
+</body>
+</html>
